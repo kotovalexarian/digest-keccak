@@ -10,7 +10,7 @@
 #define DEFAULT_DIGEST_LEN 512
 
 static int keccak_init_func(hashState *ctx);
-static void keccak_update_func(hashState *ctx, unsigned char *str, size_t len)keccak
+static void keccak_update_func(hashState *ctx, unsigned char *str, size_t len);
 static int keccak_finish_func(hashState *ctx, unsigned char *digest);
 
 /*
