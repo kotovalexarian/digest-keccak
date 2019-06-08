@@ -6,8 +6,6 @@ This Ruby extension implements the [Keccak](http://keccak.noekeon.org/)
 the reference C implementation, version 3.2. The exposed interface
 is almost identical to that of the `digest` standard library.
 
-[<img src="http://www.phusion.nl/assets/logo.png">](http://www.phusion.nl/)
-
 
 
 Usage
