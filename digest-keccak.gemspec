@@ -3,11 +3,11 @@
 lib = File.expand_path('lib', __dir__).freeze
 $LOAD_PATH.unshift lib unless $LOAD_PATH.include? lib
 
-require 'digest/sha3/version'
+require 'digest/keccak/version'
 
 Gem::Specification.new do |spec|
-  spec.name     = 'digest-sha3'
-  spec.version  = Digest::SHA3::Version::STRING
+  spec.name     = 'digest-keccak'
+  spec.version  = Digest::Keccak::Version::STRING
   spec.license  = 'MIT'
   spec.homepage = 'https://github.com/kotovalexarian/digest-keccak.rb'
   spec.summary  = 'The Keccak cryptographic hash function.'
@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
     'README.md',
     'LICENSE',
     'Makefile',
-    'digest-sha3.gemspec',
+    'digest-keccak.gemspec',
     'ext/**/*.{c,h,rb}',
     'lib/**/*',
   ]

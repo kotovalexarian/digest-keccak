@@ -18,18 +18,18 @@ and variable length. Variable length is not supported by this Ruby extension.
 Unless the user specifies otherwise, this Ruby extension assumes 512-bit.
 
 ```ruby
-    require 'digest/sha3'
+    require 'digest/keccak'
 
     # Generate 512-bit digest.
-    Digest::SHA3.digest("foo")       # => "\025\227\204*..."
-    Digest::SHA3.hexdigest("foo")    # => "1597842a..."
+    Digest::Keccak.digest("foo")       # => "\025\227\204*..."
+    Digest::Keccak.hexdigest("foo")    # => "1597842a..."
 
     # Generate 224-bit digest.
-    Digest::SHA3.digest("foo", 224)       # => "\332\251M\247..."
-    Digest::SHA3.hexdigest("foo", 224)    # => "daa94da7..."
+    Digest::Keccak.digest("foo", 224)       # => "\332\251M\247..."
+    Digest::Keccak.hexdigest("foo", 224)    # => "daa94da7..."
 
     # Use this interface to feed data in chunks. 512-bit by default.
-    digest = Digest::SHA3.new
+    digest = Digest::Keccak.new
     digest.update("f")
     digest.update("o")
     digest.update("o")
@@ -37,7 +37,7 @@ Unless the user specifies otherwise, this Ruby extension assumes 512-bit.
     digest.hexdigest    # => "1597842a..."
 
     # You can pass a hash length to the constructor.
-    digest = Digest::SHA3.new(224)
+    digest = Digest::Keccak.new(224)
 ```
 
 
