@@ -7,7 +7,7 @@ require 'digest/keccak/version'
 
 Gem::Specification.new do |spec|
   spec.name     = 'digest-keccak'
-  spec.version  = Digest::Keccak::Version::STRING
+  spec.version  = Digest::Keccak::VERSION
   spec.license  = 'MIT'
   spec.homepage = 'https://github.com/kotovalexarian/digest-keccak.rb'
   spec.summary  = 'The Keccak cryptographic hash function.'

@@ -2,8 +2,6 @@
 
 module Digest
   class Keccak
-    module Version
-      STRING = "1.1.0"
-    end
+    VERSION = '0.0.1'
   end
 end
