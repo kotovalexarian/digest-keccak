@@ -1,23 +1,46 @@
-require File.expand_path('lib/digest/sha3/version')
+# frozen_string_literal: true
 
-Gem::Specification.new do |s|
-  s.name = "digest-sha3"
-  s.version = Digest::SHA3::Version::STRING
-  s.summary = "The SHA-3 (Keccak) hash"
-  s.email = "software-signing@phusion.nl"
-  s.homepage = "https://github.com/phusion/digest-sha3-ruby"
-  s.description = "The SHA-3 (Keccak) hash."
-  s.authors = ["Hongli Lai (Phusion)", "Keccak authors"]
-  s.extensions << "ext/digest/extconf.rb"
-  s.required_ruby_version = "~> 2.2"
-  s.license = "MIT"
+lib = File.expand_path('lib', __dir__).freeze
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include? lib
 
-  s.files = Dir[
-    "README.md",
-    "LICENSE",
-    "Makefile",
-    "digest-sha3.gemspec",
-    "ext/**/*.{c,h,rb}",
-    "lib/**/*"
+require 'digest/sha3/version'
+
+Gem::Specification.new do |spec|
+  spec.name     = 'digest-sha3'
+  spec.version  = Digest::SHA3::Version::STRING
+  spec.license  = 'MIT'
+  spec.homepage = 'https://github.com/kotovalexarian/digest-keccak.rb'
+  spec.summary  = 'The Keccak cryptographic hash function.'
+
+  spec.required_ruby_version = '~> 2.2'
+
+  spec.authors = ['Hongli Lai (Phusion)', 'Keccak authors']
+  spec.email   = %w[software-signing@phusion.nl]
+
+  spec.description = <<-DESCRIPTION.split.join ' '
+    The Keccak (draft version of SHA-3) cryptographic hash function.
+  DESCRIPTION
+
+  spec.metadata = {
+    'homepage_uri'    => 'https://github.com/kotovalexarian/digest-keccak.rb',
+    'source_code_uri' => 'https://github.com/kotovalexarian/digest-keccak.rb',
+    'bug_tracker_uri' =>
+      'https://github.com/kotovalexarian/digest-keccak.rb/issues',
+  }.freeze
+
+  spec.bindir        = 'exe'
+  spec.require_paths = ['lib']
+
+  spec.files = Dir[
+    'README.md',
+    'LICENSE',
+    'Makefile',
+    'digest-sha3.gemspec',
+    'ext/**/*.{c,h,rb}',
+    'lib/**/*',
   ]
+
+  spec.executables = spec.files.grep %r{^exe/}, &File.method(:basename)
+
+  spec.extensions << 'ext/digest/extconf.rb'
 end

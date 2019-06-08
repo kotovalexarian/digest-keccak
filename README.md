@@ -1,19 +1,23 @@
-# The SHA-3 (Keccak) extension for Ruby
+Digest::Keccak
+==============
 
-This Ruby extension implements the SHA-3 ([Keccak](http://keccak.noekeon.org/)) cryptographic hashing algorithm. It is based on the reference C implementation, version 3.2. The exposed interface is almost identical to that of the `digest` standard library.
+This Ruby extension implements the [Keccak](http://keccak.noekeon.org/)
+(draft version of SHA-3) cryptographic hash function. It is based on
+the reference C implementation, version 3.2. The exposed interface
+is almost identical to that of the `digest` standard library.
 
 [<img src="http://www.phusion.nl/assets/logo.png">](http://www.phusion.nl/)
 
-## Installation
 
-    gem install digest-sha3
 
-**Note**: as of version 1.1.0, digest-sha3 requires Ruby 2.2. The last version that worked on older versions was 1.0.2.
+Usage
+-----
 
-## Usage
+Keccak supports 5 hash lengths: 224-bit, 256-bit, 384-bit, 512-bit
+and variable length. Variable length is not supported by this Ruby extension.
+Unless the user specifies otherwise, this Ruby extension assumes 512-bit.
 
-Keccak supports 5 hash lengths: 224-bit, 256-bit, 384-bit, 512-bit and variable length. Variable length is not supported by this Ruby extension. Unless the user specifies otherwise, this Ruby extension assumes 512-bit.
-
+```ruby
     require 'digest/sha3'
 
     # Generate 512-bit digest.
@@ -34,19 +38,18 @@ Keccak supports 5 hash lengths: 224-bit, 256-bit, 384-bit, 512-bit and variable 
 
     # You can pass a hash length to the constructor.
     digest = Digest::SHA3.new(224)
+```
 
-## Running the test suite
+
+
+Running the test suite
+----------------------
 
 Run the test suite as follows:
 
+```
     make test
+```
 
-A part of the test suite is automatically generated from Keccak's reference test suite.
-
-## Warning
-
-Do not use SHA-3 for hashing passwords. Do not even use SHA-3 + salt for hashing passowords. Use a [slow hash](http://codahale.com/how-to-safely-store-a-password/) instead.
-
-## See also
-
-[node-sha3](https://github.com/phusion/node-sha3)
+A part of the test suite is automatically generated from Keccak's reference
+test suite.
