@@ -45,4 +45,5 @@ Gem::Specification.new do |spec|
   spec.extensions << 'ext/digest/extconf.rb'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'rake',    '~> 10.0'
 end
