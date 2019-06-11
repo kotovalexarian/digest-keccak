@@ -4,9 +4,12 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-*.o
-test/test_vectors.rb
+/test/test_vectors.rb
+/ext/digest/Makefile
+/ext/digest/keccak.so
+/ext/digest/mkmf.log
 
+*.o
 *.gem
 *.rbc
 /.config
