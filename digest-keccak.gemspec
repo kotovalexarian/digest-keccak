@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.license  = 'MIT'
   spec.homepage = 'https://github.com/kotovalexarian/digest-keccak.rb'
   spec.summary  = 'The Keccak cryptographic hash function.'
+  spec.platform = Gem::Platform::RUBY
 
   spec.required_ruby_version = '~> 2.2'
 
