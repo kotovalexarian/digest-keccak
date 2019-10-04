@@ -8,6 +8,14 @@ is almost identical to that of the `digest` standard library.
 
 
 
+Table of contents
+-----------------
+
+* [Usage](#usage)
+* [Development](#development)
+
+
+
 Usage
 -----
 
@@ -16,37 +24,37 @@ and variable length. Variable length is not supported by this Ruby extension.
 Unless the user specifies otherwise, this Ruby extension assumes 512-bit.
 
 ```ruby
-    require 'digest/keccak'
+require 'digest/keccak'
 
-    # Generate 512-bit digest.
-    Digest::Keccak.digest("foo")       # => "\025\227\204*..."
-    Digest::Keccak.hexdigest("foo")    # => "1597842a..."
+# Generate 512-bit digest.
+Digest::Keccak.digest    'foo' #=> "\x15\x97\x84*\xACR\xBC\x9D..."
+Digest::Keccak.hexdigest 'foo' #=> "1597842aac52bc9d..."
 
-    # Generate 224-bit digest.
-    Digest::Keccak.digest("foo", 224)       # => "\332\251M\247..."
-    Digest::Keccak.hexdigest("foo", 224)    # => "daa94da7..."
+# Generate 224-bit digest.
+Digest::Keccak.digest    'foo', 224 #=> "\xDA\xA9M\xA7\xF6\x80k\xF5..."
+Digest::Keccak.hexdigest 'foo', 224 #=> "daa94da7f6806bf5..."
 
-    # Use this interface to feed data in chunks. 512-bit by default.
-    digest = Digest::Keccak.new
-    digest.update("f")
-    digest.update("o")
-    digest.update("o")
-    digest.digest       # => "\025\227\204*..."
-    digest.hexdigest    # => "1597842a..."
+# Use this interface to feed data in chunks. 512-bit by default.
+digest = Digest::Keccak.new
+digest.update 'f'
+digest.update 'o'
+digest.update 'o'
+digest.digest    #=> "\x15\x97\x84*\xACR\xBC\x9D..."
+digest.hexdigest #=> "1597842aac52bc9d..."
 
-    # You can pass a hash length to the constructor.
-    digest = Digest::Keccak.new(224)
+# You can pass a hash length to the constructor.
+digest = Digest::Keccak.new 224
 ```
 
 
 
-Running the test suite
-----------------------
+Development
+-----------
 
 Run the test suite as follows:
 
 ```
-    make test
+make test
 ```
 
 A part of the test suite is automatically generated from Keccak's reference
