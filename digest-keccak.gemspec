@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.name     = 'digest-keccak'
   spec.version  = Digest::Keccak::VERSION
   spec.license  = 'MIT'
-  spec.homepage = 'https://github.com/kotovalexarian/digest-keccak.rb'
+  spec.homepage = 'https://github.com/kotovalexarian/digest-keccak'
   spec.summary  = 'The Keccak cryptographic hash function.'
   spec.platform = Gem::Platform::RUBY
 
@@ -23,10 +23,10 @@ Gem::Specification.new do |spec|
   DESCRIPTION
 
   spec.metadata = {
-    'homepage_uri'    => 'https://github.com/kotovalexarian/digest-keccak.rb',
-    'source_code_uri' => 'https://github.com/kotovalexarian/digest-keccak.rb',
+    'homepage_uri'    => 'https://github.com/kotovalexarian/digest-keccak',
+    'source_code_uri' => 'https://github.com/kotovalexarian/digest-keccak',
     'bug_tracker_uri' =>
-      'https://github.com/kotovalexarian/digest-keccak.rb/issues',
+      'https://github.com/kotovalexarian/digest-keccak/issues',
   }.freeze
 
   spec.bindir        = 'exe'
