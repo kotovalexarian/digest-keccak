@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '~> 2.2'
 
-  spec.authors = ['Hongli Lai (Phusion)', 'Keccak authors']
-  spec.email   = %w[software-signing@phusion.nl]
+  spec.authors = ['Alex Kotov', 'Hongli Lai (Phusion)', 'Keccak authors']
+  spec.email   = %w[kotovalexarian@gmail.com]
 
   spec.description = <<-DESCRIPTION.split.join ' '
     The Keccak (draft version of SHA-3) cryptographic hash function.
@@ -41,10 +41,12 @@ Gem::Specification.new do |spec|
     'lib/**/*',
   ]
 
+  spec.test_files = spec.files.grep %r{^(test|spec|features)/}
+
   spec.executables = spec.files.grep %r{^exe/}, &File.method(:basename)
 
   spec.extensions << 'ext/digest/extconf.rb'
 
-  spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'rake',    '~> 10.0'
+  spec.add_development_dependency 'bundler', '~> 2.2'
+  spec.add_development_dependency 'rake',    '~> 13.0'
 end
