@@ -47,6 +47,8 @@ Gem::Specification.new do |spec|
 
   spec.extensions << 'ext/digest/extconf.rb'
 
-  spec.add_development_dependency 'bundler', '~> 2.2'
-  spec.add_development_dependency 'rake',    '~> 13.0'
+  spec.add_development_dependency 'bundler',             '~> 2.2'
+  spec.add_development_dependency 'rake',                '~> 13.0'
+  spec.add_development_dependency 'rubocop',             '~> 1.7'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.9'
 end

@@ -1,0 +1,73 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.4
+  NewCops: enable
+  DisplayCopNames: true
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/LineLength:
+  Max: 80
+
+# I return a nil value in the beginning of setter
+# to write it in a single line:
+#
+#   def foo=(value)
+#     return @foo = nil if value.blank?
+#     # ...
+#   end
+#
+Lint/ReturnInVoidContext:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Performance/MethodObjectAsBlock:
+  Enabled: false
+
+# Performance/RedundantStringChars:
+#   Enabled: false
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/ArrayCoercion:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/HashAsLastArrayItem:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/console'
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/RescueStandardError:
+  EnforcedStyle: implicit
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/VariableInterpolation:
+  Enabled: false
