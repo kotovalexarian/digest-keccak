@@ -133,21 +133,20 @@ rb_keccak_block_length(VALUE self) {
 	return INT2FIX(ctx->rate / 8);
 }
 
-void __attribute__((visibility("default")))
-Init_keccak() {
-	VALUE mDigest, cDigest_Base, cKeccak;
+void
+__attribute__((visibility("default")))
+Init_keccak(void)
+{
+  VALUE mDigest, cDigest_Base, cDigest_Keccak;
 
-	rb_require("digest");
+  mDigest = rb_digest_namespace();
+  cDigest_Base = rb_const_get(mDigest, rb_intern_const("Base"));
 
-	mDigest = rb_path2class("Digest");
-	cDigest_Base = rb_path2class("Digest::Base");
+  cDigest_Keccak = rb_define_class_under(mDigest, "Keccak", cDigest_Base);
+  rb_iv_set(cDigest_Keccak, "metadata", rb_digest_make_metadata(&keccak));
 
-	cKeccak = rb_define_class_under(mDigest, "Keccak", cDigest_Base);
-
-	rb_iv_set(cKeccak, "metadata", Data_Wrap_Struct(0, 0, 0, (void *)&keccak));
-
-  rb_define_method(cKeccak, "initialize", rb_keccak_initialize, -1);
-  rb_define_method(cKeccak, "digest_length", rb_keccak_digest_length, 0);
-  rb_define_method(cKeccak, "block_length", rb_keccak_block_length, 0);
-  rb_define_method(cKeccak, "finish", rb_keccak_finish, 0);
+  rb_define_method(cDigest_Keccak, "initialize", rb_keccak_initialize, -1);
+  rb_define_method(cDigest_Keccak, "digest_length", rb_keccak_digest_length, 0);
+  rb_define_method(cDigest_Keccak, "block_length", rb_keccak_block_length, 0);
+  rb_define_method(cDigest_Keccak, "finish", rb_keccak_finish, 0);
 }
