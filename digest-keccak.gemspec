@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary  = 'The Keccak cryptographic hash function.'
   spec.platform = Gem::Platform::RUBY
 
-  spec.required_ruby_version = '>= 2.2', '< 4'
+  spec.required_ruby_version = '>= 2.7', '< 4'
 
   spec.authors = ['Alex Kotov', 'Hongli Lai (Phusion)', 'Keccak authors']
   spec.email   = %w[kotovalexarian@gmail.com]
@@ -23,8 +23,11 @@ Gem::Specification.new do |spec|
   DESCRIPTION
 
   spec.metadata = {
-    'homepage_uri'    => 'https://github.com/kotovalexarian/digest-keccak',
-    'source_code_uri' => 'https://github.com/kotovalexarian/digest-keccak',
+    'rubygems_mfa_required' => 'true',
+    'homepage_uri' =>
+      'https://github.com/kotovalexarian/digest-keccak',
+    'source_code_uri' =>
+      'https://github.com/kotovalexarian/digest-keccak',
     'bug_tracker_uri' =>
       'https://github.com/kotovalexarian/digest-keccak/issues',
   }.freeze
@@ -41,14 +44,7 @@ Gem::Specification.new do |spec|
     'lib/**/*',
   ]
 
-  spec.test_files = spec.files.grep %r{^(test|spec|features)/}
-
   spec.executables = spec.files.grep %r{^exe/}, &File.method(:basename)
 
   spec.extensions << 'ext/digest/extconf.rb'
-
-  spec.add_development_dependency 'bundler',             '~> 2.2'
-  spec.add_development_dependency 'rake',                '~> 13.0'
-  spec.add_development_dependency 'rubocop',             '~> 1.7'
-  spec.add_development_dependency 'rubocop-performance', '~> 1.9'
 end

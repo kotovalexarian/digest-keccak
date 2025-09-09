@@ -1,10 +1,15 @@
-require:
+plugins:
   - rubocop-performance
+  - rubocop-rake
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.7
   NewCops: enable
   DisplayCopNames: true
+  SuggestExtensions: true
+
+  Exclude:
+    - 'test/test_vectors.rb'
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
@@ -23,8 +28,24 @@ Layout/LineLength:
 Lint/ReturnInVoidContext:
   Enabled: false
 
+Metrics/AbcSize:
+  Exclude:
+    - 'test/generate_tests.rb'
+
 Metrics/ClassLength:
   Max: 200
+
+Metrics/MethodLength:
+  Exclude:
+    - 'test/generate_tests.rb'
+
+Naming/PredicatePrefix:
+  Exclude:
+    - 'ext/*/extconf.rb'
+
+Naming/VariableNumber:
+  Exclude:
+    - 'test/test_usage.rb'
 
 Performance/MethodObjectAsBlock:
   Enabled: false
@@ -43,6 +64,10 @@ Style/AsciiComments:
 
 Style/DoubleNegation:
   Enabled: false
+
+Style/GlobalVars:
+  Exclude:
+    - 'ext/*/extconf.rb'
 
 Style/HashAsLastArrayItem:
   Enabled: false
