@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary  = 'The Keccak cryptographic hash function.'
   spec.platform = Gem::Platform::RUBY
 
-  spec.required_ruby_version = '~> 3.1'
+  spec.required_ruby_version = '>= 3.1', '< 4.1'
 
   spec.authors = ['Alex Kotov', 'Hongli Lai (Phusion)', 'Keccak authors']
   spec.email   = %w[kotovalexarian@gmail.com]
